@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TODO List in JS</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="demo">
+            <h1>TODO List in JS</h1>
+            <input type="text" id="todo" class="one" placeholder="New Task">
+            <button onclick="addTask()" class="add-btn">Add</button>
+
+            <div class="todo" id="tasksContainer">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function addTask() {
+            const taskInput = document.getElementById('todo');
+            const taskText = taskInput.value.trim();
+
+            if (taskText !== '') {
+                const taskDiv = document.createElement('div');
+                taskDiv.className = 'task';
+                taskDiv.style.backgroundColor = 'white';
+                taskDiv.style.width = '30vw';
+                taskDiv.style.height = '9vh';
+                taskDiv.style.borderRadius = '10px';
+                taskDiv.style.marginLeft = '40px';
+                taskDiv.style.marginTop = '20px';
+
+                const taskTextDiv = document.createElement('div');
+                taskTextDiv.className = 'editable';
+                taskTextDiv.innerText = taskText;
+                taskTextDiv.style.fontSize = '20px';
+
+                const buttonDiv = document.createElement('div');
+                const editButton = document.createElement('button');
+                editButton.innerText = 'Edit';
+                editButton.className = 'edit-btn';
+                editButton.addEventListener('click', function () {
+                    editTask(taskTextDiv);
+                });
+
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Delete';
+                deleteButton.className = 'delete-btn';
+                deleteButton.addEventListener('click', function () {
+                    deleteTask(taskDiv);
+                });
+
+                buttonDiv.appendChild(editButton);
+                buttonDiv.appendChild(deleteButton);
+
+                taskDiv.appendChild(taskTextDiv);
+                taskDiv.appendChild(buttonDiv);
+
+                const tasksContainer = document.getElementById('tasksContainer');
+                tasksContainer.appendChild(taskDiv);
+
+                taskInput.value = ''; 
+            }
+        }
+
+        function editTask(taskTextDiv) {
+            const newText = prompt('Edit Task:', taskTextDiv.innerText);
+            if (newText !== null) {
+                taskTextDiv.innerText = newText;
+            }
+        }
+
+        function deleteTask(taskDiv) {
+            taskDiv.remove();
+        }
+
+    </script>
+</body>
+
+</html>

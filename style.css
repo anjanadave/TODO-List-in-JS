@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #00416A;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFE000, #799F0C, #00416A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFE000, #799F0C, #00416A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    height: 60vh;
+    width: 45vw;
+    background-color: white;
+    margin-left: 400px;
+    margin-top: 120px;
+}
+
+.demo {
+    height: 45vh;
+    width: 35vw;
+    background-color: rgb(245, 241, 241);
+    margin-left: 80px;
+    margin-top: 120px;
+    border-radius: 10px;
+}
+
+.one {
+    margin-left: 42px;
+    width: 23vw;
+    height: 6vh;
+    margin-top: 15px;
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+h1 {
+    padding-top: 50px;
+    font-size: 40px;
+    margin-left: 40px;
+}
+
+.add-btn {
+    width: 4vw;
+    height: 6vh;
+    border-radius: 5px;
+    border: none;
+    background: #27ae60;
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.todolist {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-btn {
+    width: 4vw;
+    height: 5vh;
+    background: #e74c3c;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-left: 69%;
+}
+
+.delete-btn{
+    width: 4vw;
+    height: 5vh;
+    background: #e74c3c;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-left: 10px;
+}
